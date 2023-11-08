@@ -1,9 +1,9 @@
 <script>
 	import { getContext } from "svelte";
+	import Projects from "$components/Projects.svelte";
 	import Footer from "$components/Footer.svelte";
 
 	const copy = getContext("copy");
-	const data = getContext("data");
 </script>
 
 <section class="intro">
@@ -23,6 +23,10 @@
 	<a href={copy} class="btn submit">Submit</a>
 
 	<p class="note">*{copy.commercial}</p>
+</section>
+
+<section class="projects">
+	<Projects />
 </section>
 
 <Footer />
