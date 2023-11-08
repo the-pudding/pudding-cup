@@ -52,6 +52,7 @@ input, textarea {
 	padding: 8px;
 }
 
+.btn,
 button,
 select,
 a[role="button"],
