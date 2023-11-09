@@ -39,6 +39,10 @@
 		padding: 0;
 		margin: 0;
 		color: var(--color-purple);
+		transition: all 0.25s linear;
+	}
+	h4:hover {
+		opacity: 0.75;
 	}
 	h4 a {
 		color: var(--color-purple);
@@ -54,6 +58,7 @@
 	img {
 		margin: 1rem 0;
 		border: 1px solid var(--color-gray-200);
+		transition: all 0.25s linear;
 	}
 	img:hover {
 		opacity: 0.75;
