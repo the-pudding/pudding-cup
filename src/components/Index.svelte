@@ -33,7 +33,7 @@
 
 <style>
 	section {
-		padding: 16px;
+		padding: 0 1rem 4rem 1rem;
 		margin: 0 auto;
 		width: 100%;
 		max-width: 40rem;
@@ -50,10 +50,35 @@
 		line-height: 1;
 	}
 
+	.desc {
+		font-family: var(--sans);
+	}
+	.note {
+		font-family: var(--sans);
+		font-size: var(--14px);
+		color: var(--color-gray-700);
+	}
 	ul {
 		margin: 16px 0;
 		list-style-type: square;
 		width: 100%;
+	}
+	.submit {
+		background: var(--color-purple);
+		color: white;
+		font-weight: 700;
+		padding: 1rem 2rem;
+		margin: 2rem 0;
+		transition: all 0.25s linear;
+	}
+	.submit:hover {
+		background: var(--color-gray-1000);
+	}
+	.projects {
+		width: 100%;
+		max-width: none;
+		border-top: 1px solid var(--color-gray-200);
+		background: var(--color-gray-100)
 	}
 
 	@media (min-width: 800px) {

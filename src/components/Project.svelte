@@ -12,7 +12,50 @@
 </script>
 
 <li>
-	<h3>{title}</h3>
-	<p>{author}</p>
-	<p><a href={link}>View project</a></p>
+	<h4><a href={link}>{title}</a></h4>
+	{#if author}
+		<p class="byline">By {author}{#if organization}
+				, {organization}
+			{/if}
+		</p>
+	{/if}
+	{#if image}
+		<a href={link}>
+			<img src={image} />
+		</a>
+	{/if}
+	{#if comment}
+		<p>{@html comment}</p>
+	{/if}
 </li>
+
+<style>
+	li {
+		margin: 2rem 0;
+	}
+	h4 {
+		font-size: var(--22px);
+		font-weight: 700;
+		padding: 0;
+		margin: 0;
+		color: var(--color-purple);
+	}
+	h4 a {
+		color: var(--color-purple);
+	}
+	.byline {
+		font-family: var(--sans);
+	}
+	p {
+		padding: 0;
+		margin: 0;
+	}
+
+	img {
+		margin: 1rem 0;
+		border: 1px solid var(--color-gray-200);
+	}
+	img:hover {
+		opacity: 0.75;
+	}
+</style>
