@@ -8,26 +8,25 @@
 		year: +d.year
 	}));
 
-	let selected;
 	let year = Math.max(...data.map((d) => d.year));
 
 	$: years = [...new Set(data.map((d) => d.year))];
-	$: projects = data.filter((d) => d.year === selected);
+	$: projects = data.filter((d) => d.year === year);
 </script>
 
-<div class="past-select">
+<div>
 	<p>See past winners from</p>
-	<select bind:value={selected}>
+	<select bind:value={year}>
 		{#each years as y}
 			<option value={y}>{y}</option>
 		{/each}
 	</select>
 </div>
 
-<ProjectGroup projects={projects} year={selected} />
+<ProjectGroup {projects} {year} />
 
 <style>
-	.past-select {
+	div {
 		position: sticky;
 		top: 0;
 		width: 100%;
@@ -36,9 +35,9 @@
 		justify-content: center;
 		align-items: center;
 		background: var(--color-gray-100);
-		padding: 1rem 0;
+		padding: 16px 0;
 		border-bottom: 1px solid var(--color-gray-200);
-		z-index: 1000;
+		z-index: var(--z-overlay);
 	}
 	p {
 		font-family: var(--sans);
@@ -46,7 +45,7 @@
 		margin: 0;
 	}
 	select {
-		margin: 0 0 0 0.5rem;
+		margin-left: 8px;
 		font-weight: 700;
 	}
 </style>

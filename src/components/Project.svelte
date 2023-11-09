@@ -6,7 +6,6 @@
 	export let author;
 	export let organization;
 	export let link;
-	export let broken;
 	export let image;
 	export let comment;
 </script>
@@ -14,14 +13,14 @@
 <li>
 	<h4><a href={link}>{title}</a></h4>
 	{#if author}
-		<p class="byline">By {author}{#if organization}
-				, {organization}
-			{/if}
+		<p class="byline">
+			By: {author}
+			{#if organization}&mdash; {organization}{/if}
 		</p>
 	{/if}
 	{#if image}
-		<a href={link}>
-			<img src={image} />
+		<a href={link} target="_blank" rel="noreferrer">
+			<img src={image} alt={title} />
 		</a>
 	{/if}
 	{#if comment}
@@ -31,13 +30,14 @@
 
 <style>
 	li {
-		margin: 2rem 0;
+		margin: 32px 0;
 	}
 	h4 {
 		font-size: var(--22px);
 		font-weight: 700;
 		padding: 0;
 		margin: 0;
+		margin-bottom: 4px;
 		color: var(--color-purple);
 		transition: all 0.25s linear;
 	}
@@ -54,9 +54,8 @@
 		padding: 0;
 		margin: 0;
 	}
-
 	img {
-		margin: 1rem 0;
+		margin: 16px 0;
 		border: 1px solid var(--color-gray-200);
 		transition: all 0.25s linear;
 	}

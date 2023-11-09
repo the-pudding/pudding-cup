@@ -33,7 +33,7 @@
 
 <style>
 	section {
-		padding: 0 1rem 4rem 1rem;
+		padding: 0 16px 64px 16px;
 		margin: 0 auto;
 		width: 100%;
 		max-width: 40rem;
@@ -67,22 +67,22 @@
 		background: var(--color-purple);
 		color: white;
 		font-weight: 700;
-		padding: 1rem 2rem;
-		margin: 2rem 0;
+		padding: 16px 32px;
+		margin: 32px 0;
 		transition: all 0.25s linear;
 		transform: translateY(0);
 	}
-	
+
 	.submit:hover {
 		background: var(--color-gray-1000);
-		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  		transform: translateY(-2px);
+		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
+		transform: translateY(-2px);
 	}
 	.projects {
 		width: 100%;
 		max-width: none;
 		border-top: 1px solid var(--color-gray-200);
-		background: var(--color-gray-100)
+		background: var(--color-gray-100);
 	}
 
 	@media (min-width: 800px) {
