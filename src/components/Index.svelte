@@ -20,7 +20,7 @@
 			<li>{@html bullet.value}</li>
 		{/each}
 	</ul>
-	<a href={copy} class="btn submit">Submit</a>
+	<a href={copy.form} class="btn submit">Submit</a>
 
 	<p class="note">*{copy.commercial}</p>
 </section>
