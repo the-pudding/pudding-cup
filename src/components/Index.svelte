@@ -7,7 +7,7 @@
 </script>
 
 <section class="intro">
-	<img class="cup" src="assets/pudding-cup-small.png" />
+	<img class="cup" src="assets/pudding-cup-small.png" alt="a golden pudding cup that looks like a trophy"/>
 	<h1>{copy.title}</h1>
 	<p class="desc">{@html copy.description}</p>
 </section>

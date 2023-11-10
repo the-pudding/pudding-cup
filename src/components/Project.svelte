@@ -8,6 +8,7 @@
 	export let link;
 	export let image;
 	export let comment;
+	export let alt;
 </script>
 
 <li>
@@ -20,7 +21,7 @@
 	{/if}
 	{#if image}
 		<a href={link} target="_blank" rel="noreferrer">
-			<img src={image} alt={title} />
+			<img src={image} alt={alt} />
 		</a>
 	{/if}
 	{#if comment}
