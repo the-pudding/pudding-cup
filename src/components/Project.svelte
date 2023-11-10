@@ -14,8 +14,8 @@
 	<h4><a href={link}>{title}</a></h4>
 	{#if author}
 		<p class="byline">
-			By: {author}
-			{#if organization}&mdash; {organization}{/if}
+			By: {@html author}
+			{#if organization}&mdash; {@html organization}{/if}
 		</p>
 	{/if}
 	{#if image}
@@ -40,6 +40,7 @@
 		margin-bottom: 4px;
 		color: var(--color-purple);
 		transition: all 0.25s linear;
+		display: inline-block;
 	}
 	h4:hover {
 		opacity: 0.75;
@@ -49,6 +50,9 @@
 	}
 	.byline {
 		font-family: var(--sans);
+	}
+	:global(.byline a:hover, p a:hover) {
+		opacity: 0.5;
 	}
 	p {
 		padding: 0;

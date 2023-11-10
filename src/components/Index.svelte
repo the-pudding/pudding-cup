@@ -7,8 +7,9 @@
 </script>
 
 <section class="intro">
+	<img class="cup" src="/assets/pudding-cup-small.png" />
 	<h1>{copy.title}</h1>
-	<p class="desc">{copy.description}</p>
+	<p class="desc">{@html copy.description}</p>
 </section>
 
 <section class="details">
@@ -57,6 +58,18 @@
 		font-family: var(--sans);
 		font-size: var(--14px);
 		color: var(--color-gray-700);
+	}
+	.cup {
+		max-width: 100px;
+	}
+	:global(.judge) {
+		font-style: italic;
+		font-family: var(--sans);
+		color: var(--color-gray-700);
+	}
+	:global(.highlight-year) {
+		color: var(--color-purple);
+		font-weight: 700;
 	}
 	ul {
 		margin: 16px 0;
