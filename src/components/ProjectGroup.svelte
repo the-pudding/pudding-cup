@@ -11,8 +11,7 @@
 	);
 	$: passionHM = projects.filter(
 		(d) =>
-			(d.tier === "honorable mention" && d.award === "passion") ||
-			d.award === "staff picks"
+			(d.tier === "honorable mention" && d.award === "passion")
 	);
 
 	$: payWinner = projects.filter(
@@ -23,7 +22,9 @@
 	);
 </script>
 
-{#if year == "2018"}
+{#if year == "2017"}
+	<ProjectList projects={passionWinner} {year} tier={"winner"} />
+{:else if year == "2018"}
 	<p class="kicker">Passion tier</p>
 	<ProjectList projects={passionWinner} {year} tier={"winner"} />
 	<ProjectList projects={passionHM} {year} tier={"honorable mention"} />
