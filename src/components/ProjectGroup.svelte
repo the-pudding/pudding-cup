@@ -10,9 +10,7 @@
 			d.award === "staff picks"
 	);
 	$: passionHM = projects.filter(
-		(d) =>
-			(d.tier === "honorable mention" && d.award === "passion") ||
-			d.award === "staff picks"
+		(d) => d.tier === "honorable mention" && d.award === "passion"
 	);
 
 	$: payWinner = projects.filter(
@@ -33,7 +31,9 @@
 	<ProjectList projects={payHM} {year} tier={"honorable mention"} />
 {:else}
 	<ProjectList projects={passionWinner} {year} tier={"winner"} />
-	<ProjectList projects={passionHM} {year} tier={"honorable mention"} />
+	{#if passionHM.length}
+		<ProjectList projects={passionHM} {year} tier={"honorable mention"} />
+	{/if}
 {/if}
 
 <style>
