@@ -21,7 +21,7 @@
 	{/if}
 	{#if image}
 		<a href={link} target="_blank" rel="noreferrer">
-			<img src={image} alt={alt} />
+			<img src="assets/project-imgs/{image}" alt={alt} />
 		</a>
 	{/if}
 	{#if comment}
