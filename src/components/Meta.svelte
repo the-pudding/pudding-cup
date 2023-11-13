@@ -1,8 +1,10 @@
 <script>
 	export let title = "The Pudding Cup";
-	export let description = "The Pudding's annual picks for the best visual and data-driven stories";
-	export let url = "https://pudding.cool";
-	export let keywords = "pudding, cup, award, data, dataviz, journalism, visualization";
+	export let description =
+		"The Pudding's annual picks for the best visual and data-driven stories";
+	export let url = "https://pudding.cool/pudding-cup";
+	export let keywords =
+		"pudding, cup, award, data, dataviz, journalism, visualization";
 	export let preloadFont = [];
 </script>
 
@@ -29,7 +31,10 @@
 	<meta name="twitter:creator" content="@puddingviz" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image:src" content="{url}/assets/social/social-twitter.jpg" />
+	<meta
+		name="twitter:image:src"
+		content="{url}/assets/social/social-twitter.jpg"
+	/>
 
 	<meta name="robots" content="max-image-preview:large" />
 
