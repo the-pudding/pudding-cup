@@ -32,8 +32,12 @@
 	<p class="note">*{copy.commercial}</p>
 </section> -->
 
-<section class="projects">
-	<Projects />
+<section class="projects" id="projects-current">
+	<Projects category="current"/>
+</section>
+
+<section class="projects" id="projects-archive">
+	<Projects category="archive"/>
 </section>
 
 <Footer />
@@ -97,7 +101,7 @@
 		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
 		transform: translateY(-2px);
 	}
-	.projects {
+	#projects-archive {
 		width: 100%;
 		max-width: none;
 		border-top: 1px solid var(--color-gray-200);

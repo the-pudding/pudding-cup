@@ -8,20 +8,26 @@
 		year: +d.year
 	}));
 
-	let year = Math.max(...data.map((d) => d.year));
+	export let category;
+	let year = category == "current" ? Math.max(...data.map((d) => d.year)) : Math.max(...data.map((d) => d.year))-1;
+	const maxYear = Math.max(...data.map((d) => d.year));
 
 	$: years = [...new Set(data.map((d) => d.year))];
 	$: projects = data.filter((d) => d.year === year);
 </script>
 
-<div>
-	<p>See winners from</p>
-	<select bind:value={year}>
-		{#each years as y}
-			<option value={y}>{y}</option>
-		{/each}
-	</select>
-</div>
+{#if category == "archive"}
+	<div>
+		<p>See past winners from</p>
+		<select bind:value={year}>
+			{#each years as y}
+				{#if y < maxYear}
+					<option value={y}>{y}</option>
+				{/if}
+			{/each}
+		</select>
+	</div>
+{/if}
 
 <ProjectGroup {projects} {year} />
 
