@@ -15,7 +15,7 @@
 </script>
 
 <div>
-	<p>See past winners from</p>
+	<p>See winners from</p>
 	<select bind:value={year}>
 		{#each years as y}
 			<option value={y}>{y}</option>
