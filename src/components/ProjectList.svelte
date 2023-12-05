@@ -3,8 +3,9 @@
 
 	export let projects;
 	export let tier;
+	export let year;
 
-	const groupTitle = tier == "winner" ? "The winners" : "Honorable mentions";
+	const groupTitle = tier == "winner" ? `The ${year} winners` : "Honorable mentions";
 </script>
 
 <div>
