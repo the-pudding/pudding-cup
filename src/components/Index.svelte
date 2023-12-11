@@ -12,11 +12,11 @@
 	<p class="desc">{@html copy.description}</p>
 </section>
 
-<section class="details">
+<!-- <section class="details">
 	{#each copy.wrap as graf}
 		<p class="graf">{graf.value}</p>
 	{/each}
-</section>
+</section> -->
 
 <!-- <section class="details">
 	{#each copy.prelude as graf}
@@ -63,6 +63,7 @@
 
 	.desc {
 		font-family: var(--sans);
+		text-align: center;
 	}
 	.note {
 		font-family: var(--sans);
