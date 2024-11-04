@@ -7,7 +7,11 @@
 </script>
 
 <section class="intro">
-	<img class="cup" src="assets/pudding-cup-small.png" alt="a golden pudding cup that looks like a trophy"/>
+	<img
+		class="cup"
+		src="assets/pudding-cup-small.png"
+		alt="a golden pudding cup that looks like a trophy"
+	/>
 	<h1>{copy.title}</h1>
 	<p class="desc">{@html copy.description}</p>
 </section>
@@ -18,7 +22,7 @@
 	{/each}
 </section> -->
 
-<!-- <section class="details">
+<section class="details">
 	{#each copy.prelude as graf}
 		<p class="graf">{graf.value}</p>
 	{/each}
@@ -30,14 +34,14 @@
 	<a href={copy.form} class="btn submit">Submit</a>
 
 	<p class="note">*{copy.commercial}</p>
-</section> -->
+</section>
 
 <section class="projects" id="projects-current">
-	<Projects category="current"/>
+	<Projects category="current" />
 </section>
 
 <section class="projects" id="projects-archive">
-	<Projects category="archive"/>
+	<Projects category="archive" />
 </section>
 
 <Footer />
