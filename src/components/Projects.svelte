@@ -9,7 +9,10 @@
 	}));
 
 	export let category;
-	let year = category == "current" ? Math.max(...data.map((d) => d.year)) : Math.max(...data.map((d) => d.year))-1;
+	let year =
+		category == "current"
+			? Math.max(...data.map((d) => d.year))
+			: Math.max(...data.map((d) => d.year)) - 1;
 	const maxYear = Math.max(...data.map((d) => d.year));
 
 	$: years = [...new Set(data.map((d) => d.year))];
