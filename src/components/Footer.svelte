@@ -1,10 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import inView from "$actions/inView.js";
-	import wordmark from "$svg/wordmark.svg";
-
-	let localURL;
-	let stories = [];
+	import wordmark from "$svg/wordmark-shadow.svg";
 
 	const v = Date.now();
 	const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
@@ -19,12 +16,14 @@
 		},
 		{ name: "patreon", url: "https://patreon.com/thepudding/" },
 		{ name: "privacy", url: "https://pudding.cool/privacy/" },
-		{ name: "newsletter", url: "https://thepuddingmail.substack.com" },
+		{ name: "newsletter", url: "https://pudding.cool/subscribe" },
 		{ name: "rss", url: "https://pudding.cool/feed/index.xml" }
 	];
 
+	let stories = [];
+
 	onMount(async () => {
-		localURL = window.location.href;
+		const localURL = window.location.href;
 		const response = await fetch(url);
 		const data = await response.json();
 		stories = data.filter((d) => !localURL.includes(d.url)).slice(0, 4);
@@ -51,7 +50,7 @@
 
 	<section class="about">
 		<div class="wordmark">
-			{@html wordmark}
+			<a href="https://pudding.cool">{@html wordmark}</a>
 		</div>
 		<p>
 			<a href="https://pudding.cool" target="_self">The Pudding</a>
@@ -79,6 +78,7 @@
 		color: var(--color-bg);
 		font-family: var(--sans);
 		padding: 3em 1em;
+		margin-top: 3em;
 	}
 
 	a,
@@ -118,6 +118,10 @@
 	.wordmark {
 		max-width: 10em;
 		margin: 1em auto;
+	}
+
+	.wordmark a {
+		border: none;
 	}
 
 	.about {
