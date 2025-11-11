@@ -16,13 +16,15 @@
 	<p class="desc">{@html copy.description}</p>
 </section>
 
-<section class="details">
+<!-- results -->
+<!-- <section class="details">
 	{#each copy.wrap as graf}
 		<p class="graf">{graf.value}</p>
 	{/each}
-</section>
+</section> -->
 
-<!-- <section class="details">
+<!-- entries -->
+<section class="details">
 	{#each copy.prelude as graf}
 		<p class="graf">{graf.value}</p>
 	{/each}
@@ -34,7 +36,7 @@
 	<a href={copy.form} class="btn submit">Submit</a>
 
 	<p class="note">*{copy.commercial}</p>
-</section> -->
+</section>
 
 <section class="projects" id="projects-current">
 	<Projects category="current" />
