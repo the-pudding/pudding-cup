@@ -5,7 +5,8 @@
 	export let tier;
 	export let year;
 
-	const groupTitle = tier == "winner" ? `The ${year} winners` : `Honorable ${year} mentions`;
+	$: groupTitle =
+		tier == "winner" ? `The ${year} winners` : `Honorable ${year} mentions`;
 </script>
 
 <div>
