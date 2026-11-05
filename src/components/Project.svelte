@@ -9,10 +9,17 @@
 	export let image;
 	export let comment;
 	export let alt;
+	export let broken;
 </script>
 
 <li>
-	<h4><a href={link}>{title}</a></h4>
+	<h4 class:broken={broken}>
+		{#if broken}
+			{title}
+		{:else}
+			<a href={link}>{title}</a>
+		{/if}
+	</h4>
 	{#if author}
 		<p class="byline">
 			By: {@html author}
@@ -20,9 +27,13 @@
 		</p>
 	{/if}
 	{#if image}
+		{#if broken}
+			<img src="assets/project-imgs/{image}" {alt} class:broken={broken} />
+		{:else}
 		<a href={link} target="_blank" rel="noreferrer">
 			<img src="assets/project-imgs/{image}" {alt} />
 		</a>
+		{/if}
 	{/if}
 	{#if comment}
 		<p>{@html comment}</p>
@@ -46,6 +57,9 @@
 	h4:hover {
 		opacity: 0.75;
 	}
+	h4.broken:hover {
+		opacity: 1;
+	}
 	h4 a {
 		color: var(--color-purple);
 	}
@@ -66,5 +80,8 @@
 	}
 	img:hover {
 		opacity: 0.75;
+	}
+	img.broken:hover {
+		opacity: 1;
 	}
 </style>

@@ -18,9 +18,17 @@
 
 <!-- results -->
 <section class="details">
-	{#each copy.wrap as graf}
+	{#each copy.preludeTenth as graf}
 		<p class="graf">{graf.value}</p>
 	{/each}
+	<ul>
+		{#each copy.details as bullet}
+			<li>{@html bullet.value}</li>
+		{/each}
+	</ul>
+	<a href={copy.form} class="btn submit">Submit</a>
+
+	<p class="note">*{copy.commercial}</p>
 </section>
 
 <!-- entries -->
@@ -38,9 +46,9 @@
 	<p class="note">*{copy.commercial}</p>
 </section> -->
 
-<section class="projects" id="projects-current">
+<!-- <section class="projects" id="projects-current">
 	<Projects category="current" />
-</section>
+</section> -->
 
 <section class="projects" id="projects-archive">
 	<Projects category="archive" />
@@ -70,6 +78,9 @@
 	.desc {
 		font-family: var(--sans);
 		text-align: center;
+	}
+	p {
+		width: 100%;
 	}
 	.note {
 		font-family: var(--sans);

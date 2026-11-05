@@ -9,13 +9,13 @@
 	}));
 
 	export let category;
-	let year =
-		category == "current"
-			? Math.max(...data.map((d) => d.year))
-			: Math.max(...data.map((d) => d.year)) - 1;
-	const maxYear = Math.max(...data.map((d) => d.year));
 
-	$: years = [...new Set(data.map((d) => d.year))];
+	const currentYear = 2026;
+	const archiveYears = [...new Set(data.map((d) => d.year))]
+		.filter((y) => y && y !== currentYear)
+		.sort((a, b) => b - a);
+
+	let year = category == "current" ? currentYear : archiveYears[0];
 	$: projects = data.filter((d) => d.year === year);
 </script>
 
@@ -23,10 +23,8 @@
 	<div>
 		<p>See past winners from</p>
 		<select bind:value={year}>
-			{#each years as y}
-				{#if y < maxYear}
-					<option value={y}>{y}</option>
-				{/if}
+			{#each archiveYears as y}
+				<option value={y}>{y}</option>
 			{/each}
 		</select>
 	</div>
